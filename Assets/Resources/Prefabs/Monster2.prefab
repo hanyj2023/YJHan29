@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
   moveSpeed: 2
+  faceTarget: 1
+  spriteRenderer: {fileID: 6048672801042036161}
 --- !u!114 &2024067322720742013
 MonoBehaviour:
   m_ObjectHideFlags: 0
