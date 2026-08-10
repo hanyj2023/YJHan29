@@ -44,6 +44,7 @@ public sealed class ProjectileController : MonoBehaviour
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         body.angularVelocity = 0f;
         ApplyScale();
+        ConfigureCollisionFiltering();
     }
 
     private void Start()
@@ -96,37 +97,39 @@ public sealed class ProjectileController : MonoBehaviour
 
     private void TryDamageEnemy(Collider2D other)
     {
-        if (hasHitEnemy || !IsOnEnemyLayer(other.transform))
+        if (hasHitEnemy)
+        {
+            return;
+        }
+
+        IDamageable damageable = other.GetComponentInParent<IDamageable>();
+        if (damageable == null)
         {
             return;
         }
 
         hasHitEnemy = true;
-
-        IDamageable damageable = other.GetComponentInParent<IDamageable>();
-        damageable?.TakeDamage(damage);
+        damageable.TakeDamage(damage);
 
         // This projectile is intentionally non-piercing.
         Destroy(gameObject);
     }
 
-    private static bool IsOnEnemyLayer(Transform target)
+    private static void ConfigureCollisionFiltering()
     {
-        int enemyLayer = LayerMask.NameToLayer("Enemy");
-        if (enemyLayer < 0)
+        int projectileLayer = LayerMask.NameToLayer("Projectile");
+        if (projectileLayer < 0)
         {
-            return false;
+            return;
         }
 
-        for (Transform current = target; current != null; current = current.parent)
-        {
-            if (current.gameObject.layer == enemyLayer)
-            {
-                return true;
-            }
-        }
+        Physics2D.IgnoreLayerCollision(projectileLayer, projectileLayer, true);
 
-        return false;
+        int playerLayer = LayerMask.NameToLayer("Player");
+        if (playerLayer >= 0)
+        {
+            Physics2D.IgnoreLayerCollision(projectileLayer, playerLayer, true);
+        }
     }
 
     private void ApplyVisualDirection(Quaternion baseRotation)
