@@ -24,6 +24,17 @@ public sealed class AutoShooter : MonoBehaviour
 
     private Vector2 fireDirection = Vector2.right;
     private float nextFireTime;
+    private PlayerAttackStats attackStats;
+
+    private void Awake()
+    {
+        attackStats = GetComponent<PlayerAttackStats>();
+        if (attackStats == null)
+        {
+            Debug.LogError("AutoShooter requires PlayerAttackStats on the same object.", this);
+            enabled = false;
+        }
+    }
 
     private void OnEnable()
     {
@@ -32,6 +43,11 @@ public sealed class AutoShooter : MonoBehaviour
 
     private void Update()
     {
+        if (LevelUpPanelController.IsPaused)
+        {
+            return;
+        }
+
         Vector2 inputDirection = ReadKeyboardInput();
         if (inputDirection.sqrMagnitude > 0f
             && !ApproximatelySameDirection(inputDirection, fireDirection))
@@ -71,7 +87,7 @@ public sealed class AutoShooter : MonoBehaviour
             origin.position,
             baseRotation);
 
-        projectile.Initialize(fireDirection, baseRotation);
+        projectile.Initialize(fireDirection, baseRotation, attackStats);
     }
 
     private static bool ApproximatelySameDirection(Vector2 a, Vector2 b)

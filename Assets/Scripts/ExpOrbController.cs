@@ -16,7 +16,7 @@ public sealed class ExpOrbController : MonoBehaviour
 
     private void Update()
     {
-        if (isCollected)
+        if (isCollected || LevelUpPanelController.IsPaused)
         {
             return;
         }

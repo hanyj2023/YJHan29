@@ -29,6 +29,13 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (LevelUpPanelController.IsPaused)
+        {
+            moveInput = Vector2.zero;
+            animator.SetBool(IsMovingHash, false);
+            return;
+        }
+
         moveInput = ReadKeyboardInput();
 
         bool isMoving = moveInput.sqrMagnitude > 0f;

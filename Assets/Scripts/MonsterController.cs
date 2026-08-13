@@ -59,7 +59,7 @@ public sealed class MonsterController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-        if (damage <= 0f || isDead)
+        if (damage <= 0f || isDead || LevelUpPanelController.IsPaused)
         {
             return;
         }
@@ -73,7 +73,7 @@ public sealed class MonsterController : MonoBehaviour, IDamageable
 
     private void TryDamagePlayer(Collider2D other)
     {
-        if (isDead || attackDamge <= 0f)
+        if (isDead || attackDamge <= 0f || LevelUpPanelController.IsPaused)
         {
             return;
         }

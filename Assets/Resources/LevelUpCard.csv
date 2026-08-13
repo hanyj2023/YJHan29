@@ -1,0 +1,16 @@
+﻿ID,Rate,Required,Icon,Desc,Effect,Value
+1,1,0,Skill_ATKUp,공격력이 150%가 됩니다.,ATKUp,150
+2,1,1,Skill_ATKUp,공격력이 200%가 됩니다.,ATKUp,200
+3,1,2,Skill_ATKUp,공격력이 250%가 됩니다.,ATKUp,250
+4,10,0,Skill_ATKUp,공격력이 105%가 됩니다.,ATKUp,105
+5,10,0,Skill_ATKUp,공격력이 110%가 됩니다.,ATKUp,110
+6,9,0,Skill_ATKUp,공격력이 115%가 됩니다.,ATKUp,115
+7,9,0,Skill_ATKUp,공격력이 120%가 됩니다.,ATKUp,120
+8,8,0,Skill_ATKUp,공격력이 125%가 됩니다.,ATKUp,125
+9,8,0,Skill_ATKUp,공격력이 130%가 됩니다.,ATKUp,130
+10,7,0,Skill_ATKUp,공격력이 135%가 됩니다.,ATKUp,135
+11,7,0,Skill_ATKUp,공격력이 140%가 됩니다.,ATKUp,140
+12,6,0,Skill_ATKUp,공격력이 145%가 됩니다.,ATKUp,145
+13,6,0,Skill_ATKUp,공격력이 155%가 됩니다.,ATKUp,155
+14,5,0,Skill_ATKUp,공격력이 160%가 됩니다.,ATKUp,160
+15,5,0,Skill_ATKUp,공격력이 165%가 됩니다.,ATKUp,165

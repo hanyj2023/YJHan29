@@ -64,7 +64,8 @@ public sealed class PlayerHealth : MonoBehaviour
     /// <summary>Returns true only when damage was actually applied.</summary>
     public bool TakeDamage(float damage)
     {
-        if (damage <= 0f || isDead || isInvincible)
+        if (damage <= 0f || isDead || isInvincible
+            || LevelUpPanelController.IsPaused)
         {
             return false;
         }

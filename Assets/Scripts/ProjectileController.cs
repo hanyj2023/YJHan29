@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Implement this interface on an Enemy component that owns health.
@@ -14,8 +15,10 @@ public interface IDamageable
 public sealed class ProjectileController : MonoBehaviour
 {
     [Header("Projectile Stats")]
+    [FormerlySerializedAs("damage")]
+    [Tooltip("Damage dealt as a percentage of the player's current attack power.")]
     [SerializeField, Min(0f)]
-    private float damage = 1f;
+    private float attackPowerPercent = 100f;
 
     [SerializeField, Min(0f)]
     private float speed = 10f;
@@ -32,6 +35,7 @@ public sealed class ProjectileController : MonoBehaviour
     private Vector3 originalScale;
     private bool initialized;
     private bool hasHitEnemy;
+    private PlayerAttackStats attackStats;
 
     private void Awake()
     {
@@ -51,7 +55,10 @@ public sealed class ProjectileController : MonoBehaviour
     {
         if (!initialized)
         {
-            Initialize(Vector2.right, transform.rotation);
+            Initialize(
+                Vector2.right,
+                transform.rotation,
+                FindFirstObjectByType<PlayerAttackStats>());
         }
     }
 
@@ -65,7 +72,10 @@ public sealed class ProjectileController : MonoBehaviour
     /// Sets the projectile's immutable travel direction for this shot.
     /// baseRotation is the rotation at which the source sprite faces right.
     /// </summary>
-    public void Initialize(Vector2 direction, Quaternion baseRotation)
+    public void Initialize(
+        Vector2 direction,
+        Quaternion baseRotation,
+        PlayerAttackStats playerAttackStats)
     {
         moveDirection = direction.sqrMagnitude > 0f
             ? direction.normalized
@@ -73,6 +83,7 @@ public sealed class ProjectileController : MonoBehaviour
 
         initialized = true;
         hasHitEnemy = false;
+        attackStats = playerAttackStats;
 
         ApplyVisualDirection(baseRotation);
         ApplyScale();
@@ -97,7 +108,7 @@ public sealed class ProjectileController : MonoBehaviour
 
     private void TryDamageEnemy(Collider2D other)
     {
-        if (hasHitEnemy)
+        if (hasHitEnemy || LevelUpPanelController.IsPaused)
         {
             return;
         }
@@ -109,7 +120,11 @@ public sealed class ProjectileController : MonoBehaviour
         }
 
         hasHitEnemy = true;
-        damageable.TakeDamage(damage);
+        float attackPower = attackStats != null
+            ? attackStats.CurrentAttackPower
+            : 0f;
+        float finalDamage = attackPower * attackPowerPercent / 100f;
+        damageable.TakeDamage(finalDamage);
 
         // This projectile is intentionally non-piercing.
         Destroy(gameObject);
@@ -162,7 +177,7 @@ public sealed class ProjectileController : MonoBehaviour
 
     private void OnValidate()
     {
-        damage = Mathf.Max(0f, damage);
+        attackPowerPercent = Mathf.Max(0f, attackPowerPercent);
         speed = Mathf.Max(0f, speed);
         lifetime = Mathf.Max(0f, lifetime);
         scale = Mathf.Max(0.01f, scale);
