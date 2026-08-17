@@ -3,7 +3,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Collider2D))]
-public sealed class MonsterController : MonoBehaviour, IDamageable
+public sealed class MonsterController : MonoBehaviour, ICombatTarget
 {
     [Serializable]
     private sealed class ExpDropEntry
@@ -41,6 +41,8 @@ public sealed class MonsterController : MonoBehaviour, IDamageable
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
     public float AttackDamage => attackDamge;
+    public bool IsDead => isDead;
+    public Transform TargetTransform => transform;
 
     private void Awake()
     {
@@ -57,18 +59,21 @@ public sealed class MonsterController : MonoBehaviour, IDamageable
         TryDamagePlayer(collision.collider);
     }
 
-    public void TakeDamage(float damage)
+    public float ApplyDamage(float damage)
     {
         if (damage <= 0f || isDead || LevelUpPanelController.IsPaused)
         {
-            return;
+            return 0f;
         }
 
-        currentHP = Mathf.Max(0f, currentHP - damage);
+        float appliedDamage = Mathf.Min(currentHP, damage);
+        currentHP -= appliedDamage;
         if (currentHP <= 0f)
         {
             Die();
         }
+
+        return appliedDamage;
     }
 
     private void TryDamagePlayer(Collider2D other)
@@ -79,7 +84,10 @@ public sealed class MonsterController : MonoBehaviour, IDamageable
         }
 
         PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
-        playerHealth?.TakeDamage(attackDamge);
+        if (playerHealth != null)
+        {
+            CombatDamage.Apply(playerHealth, attackDamge);
+        }
     }
 
     private void Die()

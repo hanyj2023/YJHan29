@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: 9cd8298a0a467bd46aa4a08ac4f41c19
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4592789087906872349
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._0"
+  - first:
+      213: -1747939766302561435
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._1"
+  - first:
+      213: 712038790103075231
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._2"
+  - first:
+      213: -5390069056366939004
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._3"
+  - first:
+      213: 2663146209233144321
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._4"
+  - first:
+      213: 1769301770577293857
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._5"
+  - first:
+      213: 8661293399739678886
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._6"
+  - first:
+      213: -5366668206571645049
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._7"
+  - first:
+      213: 6479452702778238019
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._8"
+  - first:
+      213: 1523335322926943882
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._9"
+  - first:
+      213: -4993562878431438382
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._10"
+  - first:
+      213: 6882363879580198693
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._11"
+  - first:
+      213: 461851780745729224
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._12"
+  - first:
+      213: -5961140171435716507
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._13"
+  - first:
+      213: -5211898429692223464
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._14"
+  - first:
+      213: -2544274943103686970
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._15"
+  - first:
+      213: -7207564168823628520
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._16"
+  - first:
+      213: 1138917189926118189
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._17"
+  - first:
+      213: 6945203418827878003
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._18"
+  - first:
+      213: -3365151945094393827
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._19"
+  - first:
+      213: 3479501113459800797
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._20"
+  - first:
+      213: 4594254598817076262
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._21"
+  - first:
+      213: 4870269249751933384
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._22"
+  - first:
+      213: -1886729117575315116
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._23"
+  - first:
+      213: 7666328400187147530
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._24"
+  - first:
+      213: -5416571045354214836
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._25"
+  - first:
+      213: -1966627578729714620
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._26"
+  - first:
+      213: -3115911489445680998
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._27"
+  - first:
+      213: 5207700516033151949
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._28"
+  - first:
+      213: 1154382509042384680
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._29"
+  - first:
+      213: 8100516928915229749
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._30"
+  - first:
+      213: -3242474383740417612
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._31"
+  - first:
+      213: 2541590502100712565
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._32"
+  - first:
+      213: -715039885451184219
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._33"
+  - first:
+      213: -4013802567382189134
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._34"
+  - first:
+      213: 1348152848363937875
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._35"
+  - first:
+      213: 8908501494094456192
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._36"
+  - first:
+      213: -8952957680364145587
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._37"
+  - first:
+      213: -2540638076188769429
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._38"
+  - first:
+      213: -680901066002216362
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._39"
+  - first:
+      213: 734286124211102994
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._40"
+  - first:
+      213: 5728279475328097418
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._41"
+  - first:
+      213: -4646471604843095437
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._42"
+  - first:
+      213: 4577304639439606831
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._43"
+  - first:
+      213: 5601431598457028389
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._44"
+  - first:
+      213: -1766323576286007841
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._45"
+  - first:
+      213: -1794632352181497562
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._46"
+  - first:
+      213: 8369777034990545584
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._47"
+  - first:
+      213: -6693796138145642838
+    second: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._48"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._0"
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 1183
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1cbaf0875ddcbf30800000000000000
+      internalID: 4592789087906872349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._1"
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1104
+        width: 128
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ba1c42b021eb7e0800000000000000
+      internalID: -1747939766302561435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._2"
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1000
+        width: 224
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99846ec18ba1e900800000000000000
+      internalID: 712038790103075231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._3"
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1206
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4847c6440c0a235b0800000000000000
+      internalID: -5390069056366939004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._4"
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1189
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a054a0e5565f420800000000000000
+      internalID: 2663146209233144321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._5"
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 923
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122babf0692dd8810800000000000000
+      internalID: 1769301770577293857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._6"
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 900
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a04be22578133870800000000000000
+      internalID: 8661293399739678886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._7"
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 897
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7871aef23b3c585b0800000000000000
+      internalID: -5366668206571645049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._8"
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 881
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344aa0057e3abe950800000000000000
+      internalID: 6479452702778238019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._9"
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 805
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e8ddcb769f32510800000000000000
+      internalID: 1523335322926943882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._10"
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 792
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d95483e40d43bab0800000000000000
+      internalID: -4993562878431438382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._11"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 787
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5276b51fb71138f50800000000000000
+      internalID: 6882363879580198693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._12"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 762
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c41b326fb3d86600800000000000000
+      internalID: 461851780745729224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._13"
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 771
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5605349f896c54da0800000000000000
+      internalID: -5961140171435716507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._14"
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 749
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81067c4fdfd9ba7b0800000000000000
+      internalID: -5211898429692223464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._15"
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 714
+        width: 36
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6a06d5b6be0bcd0800000000000000
+      internalID: -2544274943103686970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._16"
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 715
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d1f65639699fb90800000000000000
+      internalID: -7207564168823628520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._17"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 606
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23e126662f3ecf00800000000000000
+      internalID: 1138917189926118189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._18"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 411
+        width: 116
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e601056b1526060800000000000000
+      internalID: 6945203418827878003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._19"
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 603
+        width: 43
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d101f61a2249c41d0800000000000000
+      internalID: -3365151945094393827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._20"
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 601
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddaf857d3dba94030800000000000000
+      internalID: 3479501113459800797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._21"
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 602
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624523a573212cf30800000000000000
+      internalID: 4594254598817076262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._22"
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 584
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1e8ff241ca69340800000000000000
+      internalID: 4870269249751933384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._23"
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 580
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45189872dddf0d5e0800000000000000
+      internalID: -1886729117575315116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._24"
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 528
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05c4a0ef05446a60800000000000000
+      internalID: 7666328400187147530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._25"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 502
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4aeefc155974d4b0800000000000000
+      internalID: -5416571045354214836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._26"
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 481
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c245403a225b4e0800000000000000
+      internalID: -1966627578729714620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._27"
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 512
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a982808520f02c4d0800000000000000
+      internalID: -3115911489445680998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._28"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 471
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc346ca1708754840800000000000000
+      internalID: 5207700516033151949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._29"
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 480
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f356a96c0350010800000000000000
+      internalID: 1154382509042384680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._30"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 37
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53cc70d7a31da6070800000000000000
+      internalID: 8100516928915229749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._31"
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 469
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b949d33aba6003d0800000000000000
+      internalID: -3242474383740417612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._32"
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 455
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c3832881b854320800000000000000
+      internalID: 2541590502100712565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._33"
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 405
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a7327b330ba316f0800000000000000
+      internalID: -715039885451184219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._34"
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 361
+        width: 49
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb32acb4db1c48c0800000000000000
+      internalID: -4013802567382189134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._35"
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 385
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350e9ad6fd995b210800000000000000
+      internalID: 1348152848363937875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._36"
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 385
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085698cd8ea51ab70800000000000000
+      internalID: 8908501494094456192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._37"
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 276
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d443accac64b0c380800000000000000
+      internalID: -8952957680364145587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._38"
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 322
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63cfed6127ddbcd0800000000000000
+      internalID: -2540638076188769429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._39"
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 320
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ac0c98614fc86f0800000000000000
+      internalID: -680901066002216362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._40"
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 315
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215e91de655b03a00800000000000000
+      internalID: 734286124211102994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._41"
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 281
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c971545dfee7f40800000000000000
+      internalID: 5728279475328097418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._42"
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 263
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a536681ba648fb0800000000000000
+      internalID: -4646471604843095437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._43"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 265
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f249b86615ad58f30800000000000000
+      internalID: 4577304639439606831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._44"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 262
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ffda37c584cbd40800000000000000
+      internalID: 5601431598457028389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._45"
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 208
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd2315d012cc77e0800000000000000
+      internalID: -1766323576286007841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._46"
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 169
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6215cc1526f2817e0800000000000000
+      internalID: -1794632352181497562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._47"
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 144
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba65db4edb672470800000000000000
+      internalID: 8369777034990545584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._48"
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 0
+        width: 40
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa682faa0ebda13a0800000000000000
+      internalID: -6693796138145642838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._0": 4592789087906872349
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._1": -1747939766302561435
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._10": -4993562878431438382
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._11": 6882363879580198693
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._12": 461851780745729224
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._13": -5961140171435716507
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._14": -5211898429692223464
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._15": -2544274943103686970
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._16": -7207564168823628520
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._17": 1138917189926118189
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._18": 6945203418827878003
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._19": -3365151945094393827
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._2": 712038790103075231
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._20": 3479501113459800797
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._21": 4594254598817076262
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._22": 4870269249751933384
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._23": -1886729117575315116
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._24": 7666328400187147530
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._25": -5416571045354214836
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._26": -1966627578729714620
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._27": -3115911489445680998
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._28": 5207700516033151949
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._29": 1154382509042384680
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._3": -5390069056366939004
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._30": 8100516928915229749
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._31": -3242474383740417612
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._32": 2541590502100712565
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._33": -715039885451184219
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._34": -4013802567382189134
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._35": 1348152848363937875
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._36": 8908501494094456192
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._37": -8952957680364145587
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._38": -2540638076188769429
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._39": -680901066002216362
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._4": 2663146209233144321
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._40": 734286124211102994
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._41": 5728279475328097418
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._42": -4646471604843095437
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._43": 4577304639439606831
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._44": 5601431598457028389
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._45": -1766323576286007841
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._46": -1794632352181497562
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._47": 8369777034990545584
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._48": -6693796138145642838
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._5": 1769301770577293857
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._6": 8661293399739678886
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._7": -5366668206571645049
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._8": 6479452702778238019
+      "Codex \uC774\uBBF8\uC9C0 2026\uB144 8\uC6D4 17\uC77C \uC624\uC804 02_53_27._9": 1523335322926943882
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
-public sealed class PlayerHealth : MonoBehaviour
+public sealed class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health")]
     [SerializeField, Min(1f)]
@@ -64,19 +64,25 @@ public sealed class PlayerHealth : MonoBehaviour
     /// <summary>Returns true only when damage was actually applied.</summary>
     public bool TakeDamage(float damage)
     {
+        return CombatDamage.Apply(this, damage) > 0f;
+    }
+
+    public float ApplyDamage(float damage)
+    {
         if (damage <= 0f || isDead || isInvincible
             || LevelUpPanelController.IsPaused)
         {
-            return false;
+            return 0f;
         }
 
-        currentHP = Mathf.Max(0f, currentHP - damage);
+        float appliedDamage = Mathf.Min(currentHP, damage);
+        currentHP -= appliedDamage;
         NotifyHealthChanged();
 
         if (currentHP <= 0f)
         {
             HandleDeath();
-            return true;
+            return appliedDamage;
         }
 
         if (invincibilityRoutine != null)
@@ -85,7 +91,7 @@ public sealed class PlayerHealth : MonoBehaviour
         }
 
         invincibilityRoutine = StartCoroutine(InvincibilityEffect());
-        return true;
+        return appliedDamage;
     }
 
     public void Heal(float amount)

@@ -1003,6 +1003,10 @@ GameObject:
   - component: {fileID: 1276845079}
   - component: {fileID: 1276845080}
   - component: {fileID: 1276845081}
+  - component: {fileID: 1276845082}
+  - component: {fileID: 1276845083}
+  - component: {fileID: 1276845084}
+  - component: {fileID: 1276845085}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1193,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1b7e5dd85f4d73b4a89f8f4133e152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  moveSpeed: 20
 --- !u!114 &1276845077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1215,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8169506231050054751, guid: 6fc7ceacfd33a764ba10eaaa6de37963, type: 3}
   spawnPoint: {fileID: 1276845073}
   baseRotationReference: {fileID: 1276845073}
+  projectileCount: 1
 --- !u!114 &1276845078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f4f26970bf438db15dac9b63226835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpDropManager
-  magnetRange: 3
   currentExperience: 0
   currentLevel: 1
   levelXpCsv: {fileID: 0}
@@ -1261,6 +1265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelUpPanelController
   experienceManager: {fileID: 1276845079}
   playerAttackStats: {fileID: 1276845081}
+  playerItemMagnet: {fileID: 1276845082}
+  autoShooter: {fileID: 1276845077}
+  fireRingManager: {fileID: 1276845083}
+  explosionController: {fileID: 1276845084}
+  fireBombController: {fileID: 1276845085}
   levelUpPanel: {fileID: 1692448364}
   card1: {fileID: 1653878240}
   card2: {fileID: 1881070999}
@@ -1280,6 +1289,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackStats
   baseAttackPower: 10
   attackPercent: 100
+  healPercent: 0
+--- !u!114 &1276845082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276845070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d397c2b56d3b408c84ee9adb3838dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerItemMagnet
+  baseAbsorptionRadius: 3
+  radiusPercent: 100
+--- !u!114 &1276845083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276845070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b0f96f2fcf45cead139797717a8c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireRingManager
+  fireringPrefab: {fileID: 8099182736450012000, guid: 6db4070fc5aa5f142a66daf1203a801b, type: 3}
+  fireballCount: 0
+--- !u!114 &1276845084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276845070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1652c805a77248e490df286614ddf6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplosionController
+  explosionRadius: 3
+  damageLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackPowerPercent: 30
+  explosionEffectPrefab: {fileID: 1289907898800547114, guid: 261a342219476b94f9972cddf1a59e1b, type: 3}
+  effectSize: 0.6
+  effectDuration: 0.5
+  activationChancePercent: 0
+--- !u!114 &1276845085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276845070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2fba157b1c48e6aee2bce06cf1f4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBombController
+  throwCooldown: 3
+  enemySearchRadius: 8
+  projectileFlightDuration: 0.7
+  projectileRotationSpeed: 360
+  arcHeight: 2
+  explosionRadius: 5
+  damageLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackPowerPercent: 150
+  projectilePrefab: {fileID: 7240713712865919333, guid: adff5bff417ad7b44969ddc1eb89676b, type: 3}
+  explosionEffectPrefab: {fileID: 2270042762031060635, guid: cf61abb4887dd54418096feaaab267ac, type: 3}
+  effectFlameFillRatio: 0.9
+  effectDuration: 0.5
+  simultaneousThrowCount: 1
+  targetDispersionRadius: 1.5
 --- !u!1 &1327810704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2500,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1784309011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784309012}
+  - component: {fileID: 1784309013}
+  m_Layer: 0
+  m_Name: TreasureBoxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1784309012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784309011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784309013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784309011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd0eab4b1174c909b6b21c920971b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxManager
+  treasureBoxPrefab: {fileID: 6384051772296138841, guid: 8e43ea72b5c42444293423a1c72a6871, type: 3}
+  spawnCooldown: 5
+  firstSpawnDelay: 5
+  maxActiveCount: 30
+  player: {fileID: 1276845073}
+  targetCamera: {fileID: 1022087008}
+  minimumSpawnDistance: 1
+  maximumSpawnDistance: 4
+  positionAttempts: 16
 --- !u!1 &1812199802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,3 +2944,4 @@ SceneRoots:
   - {fileID: 2015461171}
   - {fileID: 1639132291}
   - {fileID: 1768152491}
+  - {fileID: 1784309012}

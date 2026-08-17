@@ -18,6 +18,21 @@ public sealed class LevelUpPanelController : MonoBehaviour
     private PlayerAttackStats playerAttackStats;
 
     [SerializeField]
+    private PlayerItemMagnet playerItemMagnet;
+
+    [SerializeField]
+    private AutoShooter autoShooter;
+
+    [SerializeField]
+    private FireRingManager fireRingManager;
+
+    [SerializeField]
+    private ExplosionController explosionController;
+
+    [SerializeField]
+    private FireBombController fireBombController;
+
+    [SerializeField]
     private GameObject levelUpPanel;
 
     [SerializeField]
@@ -84,11 +99,14 @@ public sealed class LevelUpPanelController : MonoBehaviour
     private void Start()
     {
         if (experienceManager == null || playerAttackStats == null
+            || playerItemMagnet == null
+            || autoShooter == null || fireRingManager == null
+            || explosionController == null || fireBombController == null
             || levelUpPanel == null || cardViews[0] == null
             || cardViews[1] == null || cardViews[2] == null)
         {
             Debug.LogError(
-                "LevelUpPanelController requires ExpDropManager, PlayerAttackStats, Panel_Levelup, and valid Card1~3 UI.",
+                "LevelUpPanelController requires all player upgrade components, Panel_Levelup, and valid Card1~3 UI.",
                 this);
             enabled = false;
             return;
@@ -222,6 +240,24 @@ public sealed class LevelUpPanelController : MonoBehaviour
                 // attack percentage instead of being added to the old value.
                 playerAttackStats.SetAttackPercent(card.Value);
                 break;
+            case LevelUpCardEffect.HEAL:
+                playerAttackStats.SetHealPercent(card.Value);
+                break;
+            case LevelUpCardEffect.MAGNET:
+                playerItemMagnet.SetRadiusPercent(card.Value);
+                break;
+            case LevelUpCardEffect.PLUS1:
+                autoShooter.SetProjectileCount(card.Value);
+                break;
+            case LevelUpCardEffect.FIRERING:
+                fireRingManager.SetFireballCount(card.Value);
+                break;
+            case LevelUpCardEffect.EXPLOSION:
+                explosionController.SetActivationChancePercent(card.Value);
+                break;
+            case LevelUpCardEffect.FIREBOMB:
+                fireBombController.SetSimultaneousThrowCount(card.Value);
+                break;
             default:
                 throw new ArgumentOutOfRangeException(
                     nameof(card.Effect), card.Effect, "Unsupported card effect.");
@@ -262,6 +298,11 @@ public sealed class LevelUpPanelController : MonoBehaviour
     {
         experienceManager ??= GetComponent<ExpDropManager>();
         playerAttackStats ??= GetComponent<PlayerAttackStats>();
+        playerItemMagnet ??= GetComponent<PlayerItemMagnet>();
+        autoShooter ??= GetComponent<AutoShooter>();
+        fireRingManager ??= GetComponent<FireRingManager>();
+        explosionController ??= GetComponent<ExplosionController>();
+        fireBombController ??= GetComponent<FireBombController>();
 
         if (levelUpPanel == null)
         {

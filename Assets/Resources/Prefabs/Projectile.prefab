@@ -180,6 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
   attackPowerPercent: 100
-  speed: 8
+  speed: 25
   lifetime: 3
   scale: 1

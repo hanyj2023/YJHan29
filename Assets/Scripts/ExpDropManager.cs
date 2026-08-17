@@ -11,10 +11,6 @@ public sealed class ExpDropManager : MonoBehaviour
 {
     public static ExpDropManager Instance { get; private set; }
 
-    [Header("Experience Magnet")]
-    [SerializeField, Min(0f)]
-    private float magnetRange = 3f;
-
     [Header("Experience")]
     [Tooltip("Total experience earned across every level.")]
     [SerializeField, Min(0)]
@@ -41,7 +37,6 @@ public sealed class ExpDropManager : MonoBehaviour
     private int experienceRequiredForCurrentLevel;
     private Coroutine barAnimationRoutine;
 
-    public float MagnetRange => magnetRange;
     public int CurrentExperience => currentExperience;
     public int CurrentLevel => currentLevel;
     public int NeedExperience => TryGetNeedExperience(currentLevel, out int needXp) ? needXp : 0;
@@ -323,7 +318,6 @@ public sealed class ExpDropManager : MonoBehaviour
 
     private void OnValidate()
     {
-        magnetRange = Mathf.Max(0f, magnetRange);
         currentExperience = Mathf.Max(0, currentExperience);
         currentLevel = Mathf.Max(1, currentLevel);
         barAnimationDuration = Mathf.Max(0f, barAnimationDuration);

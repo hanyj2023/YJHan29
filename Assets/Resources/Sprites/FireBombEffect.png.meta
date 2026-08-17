@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 514126426cc7e9e4a89cad6cc1921a27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2473748623721885950
+    second: oil_explosion_sheet_0
+  - first:
+      213: -9038086492906949402
+    second: oil_explosion_sheet_1
+  - first:
+      213: -9023612673197416961
+    second: oil_explosion_sheet_2
+  - first:
+      213: 5162776932843261232
+    second: oil_explosion_sheet_3
+  - first:
+      213: 6960592460751862932
+    second: oil_explosion_sheet_4
+  - first:
+      213: -8451242270591024303
+    second: oil_explosion_sheet_5
+  - first:
+      213: -712730155001009968
+    second: oil_explosion_sheet_6
+  - first:
+      213: 7207802456695014399
+    second: oil_explosion_sheet_7
+  - first:
+      213: -8917292054262711574
+    second: oil_explosion_sheet_8
+  - first:
+      213: -4085641280956448648
+    second: oil_explosion_sheet_9
+  - first:
+      213: -4006229035309449581
+    second: oil_explosion_sheet_10
+  - first:
+      213: 2060452217158506639
+    second: oil_explosion_sheet_11
+  - first:
+      213: 1708197421137213751
+    second: oil_explosion_sheet_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: oil_explosion_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 49
+        width: 922
+        height: 925
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0fd8c4445845220800000000000000
+      internalID: 2473748623721885950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oil_explosion_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 202
+        width: 582
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8a47243bfdb16f0800000000000000
+      internalID: -712730155001009968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBombEffect_0
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 346
+        width: 550
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e76e3b9becfc442862007dac583b30
+      internalID: 105124127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBombEffect_1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 243
+        width: 511
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cacc3b512399045b63192f3ff4e2ee
+      internalID: -1342173439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c8a51f3fe4f0d1542b690177a910aa2f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FireBombEffect_0: 105124127
+      FireBombEffect_1: -1342173439
+      oil_explosion_sheet_0: 2473748623721885950
+      oil_explosion_sheet_1: -9038086492906949402
+      oil_explosion_sheet_10: -4006229035309449581
+      oil_explosion_sheet_11: 2060452217158506639
+      oil_explosion_sheet_12: 1708197421137213751
+      oil_explosion_sheet_2: -9023612673197416961
+      oil_explosion_sheet_3: 5162776932843261232
+      oil_explosion_sheet_4: 6960592460751862932
+      oil_explosion_sheet_5: -8451242270591024303
+      oil_explosion_sheet_6: -712730155001009968
+      oil_explosion_sheet_7: 7207802456695014399
+      oil_explosion_sheet_8: -8917292054262711574
+      oil_explosion_sheet_9: -4085641280956448648
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

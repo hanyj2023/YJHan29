@@ -18,6 +18,8 @@ public sealed class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 facingDirection = Vector2.down;
 
+    public Vector2 FacingDirection => facingDirection;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();

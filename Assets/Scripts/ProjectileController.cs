@@ -1,14 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-/// <summary>
-/// Implement this interface on an Enemy component that owns health.
-/// </summary>
-public interface IDamageable
-{
-    void TakeDamage(float damage);
-}
-
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -113,8 +105,8 @@ public sealed class ProjectileController : MonoBehaviour
             return;
         }
 
-        IDamageable damageable = other.GetComponentInParent<IDamageable>();
-        if (damageable == null)
+        ICombatTarget target = CombatTargetFinder.Find(other);
+        if (target == null || target.IsDead)
         {
             return;
         }
@@ -124,7 +116,7 @@ public sealed class ProjectileController : MonoBehaviour
             ? attackStats.CurrentAttackPower
             : 0f;
         float finalDamage = attackPower * attackPowerPercent / 100f;
-        damageable.TakeDamage(finalDamage);
+        CombatDamage.Apply(target, finalDamage, attackStats);
 
         // This projectile is intentionally non-piercing.
         Destroy(gameObject);

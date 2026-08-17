@@ -6,7 +6,13 @@ using UnityEngine;
 
 public enum LevelUpCardEffect
 {
-    ATKUp
+    ATKUp,
+    HEAL,
+    MAGNET,
+    PLUS1,
+    FIRERING,
+    EXPLOSION,
+    FIREBOMB
 }
 
 public sealed class LevelUpCardData
