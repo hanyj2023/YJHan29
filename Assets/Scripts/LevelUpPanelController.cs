@@ -33,6 +33,9 @@ public sealed class LevelUpPanelController : MonoBehaviour
     private FireBombController fireBombController;
 
     [SerializeField]
+    private EggSkillController eggSkillController;
+
+    [SerializeField]
     private GameObject levelUpPanel;
 
     [SerializeField]
@@ -102,6 +105,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
             || playerItemMagnet == null
             || autoShooter == null || fireRingManager == null
             || explosionController == null || fireBombController == null
+            || eggSkillController == null
             || levelUpPanel == null || cardViews[0] == null
             || cardViews[1] == null || cardViews[2] == null)
         {
@@ -258,6 +262,9 @@ public sealed class LevelUpPanelController : MonoBehaviour
             case LevelUpCardEffect.FIREBOMB:
                 fireBombController.SetSimultaneousThrowCount(card.Value);
                 break;
+            case LevelUpCardEffect.EGGPROJECTILE:
+                eggSkillController.ApplyUpgrade(card.Value);
+                break;
             default:
                 throw new ArgumentOutOfRangeException(
                     nameof(card.Effect), card.Effect, "Unsupported card effect.");
@@ -303,6 +310,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
         fireRingManager ??= GetComponent<FireRingManager>();
         explosionController ??= GetComponent<ExplosionController>();
         fireBombController ??= GetComponent<FireBombController>();
+        eggSkillController ??= GetComponent<EggSkillController>();
 
         if (levelUpPanel == null)
         {

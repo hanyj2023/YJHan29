@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ea1e5265241dc2c4584942edb3d5fe5f
+guid: 2bd25c8639d108044966d433738d30f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3060034427064901430
-    second: SkillEgg_0
+      213: 4262105436729044852
+    second: Skill_Egg_0
+  - first:
+      213: -5029090170326704986
+    second: Skill_Egg_1
+  - first:
+      213: -8370006071477156488
+    second: Skill_Egg_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +102,42 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkillEgg_0
+      name: Skill_Egg_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1254
+        width: 803
         height: 1254
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac0a45eb6e29885d0800000000000000
-      internalID: -3060034427064901430
+      spriteID: 47fee77205a062b30800000000000000
+      internalID: 4262105436729044852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Egg_1
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 930
+        width: 105
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac9446a225153ab0800000000000000
+      internalID: -5029090170326704986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Egg_2
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 896
+        width: 302
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875cdbdf2d3c7db80800000000000000
+      internalID: -8370006071477156488
       vertices: []
       indices: 
       edges: []
@@ -135,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SkillEgg_0: -3060034427064901430
+      Skill_Egg_0: 4262105436729044852
+      Skill_Egg_1: -5029090170326704986
+      Skill_Egg_2: -8370006071477156488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

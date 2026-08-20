@@ -177,7 +177,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7485b7cc920f43aa839152b8c2742e4b, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreasureBoxController
-  maxHP: 100
-  itemDrops: []
+  maxHP: 10
+  itemDrops:
+  - itemPrefab: {fileID: 8039554320784652754, guid: a9413bee8576b0b4a922e23b4234a287, type: 3}
+    dropChance: 33.34
+  - itemPrefab: {fileID: 8039554320784652754, guid: 80bc2ab43932497419a7e1fb82546f3f, type: 3}
+    dropChance: 33.33
+  - itemPrefab: {fileID: 8039554320784652754, guid: dc72c355f23faf14197a80d04fd5d8a9, type: 3}
+    dropChance: 33.33

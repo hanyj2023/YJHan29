@@ -93,7 +93,8 @@ public sealed class TreasureBoxController : MonoBehaviour, ICombatTarget
             }
 
             cumulativeChance += drop.DropChance;
-            if (roll < cumulativeChance)
+            if (roll < cumulativeChance
+                || Mathf.Approximately(cumulativeChance, 100f))
             {
                 Instantiate(drop.ItemPrefab, transform.position, Quaternion.identity);
                 return;

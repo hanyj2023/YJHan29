@@ -12,7 +12,8 @@ public enum LevelUpCardEffect
     PLUS1,
     FIRERING,
     EXPLOSION,
-    FIREBOMB
+    FIREBOMB,
+    EGGPROJECTILE
 }
 
 public sealed class LevelUpCardData

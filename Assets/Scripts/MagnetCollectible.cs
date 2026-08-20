@@ -15,7 +15,12 @@ public abstract class MagnetCollectible : MonoBehaviour
     [SerializeField, Min(0f)]
     private float collectDistance = 0.1f;
 
+    [Tooltip("SuperMagnet 발동 중 목표 속도까지 증가하는 가속도입니다.")]
+    [SerializeField, Min(0f)]
+    private float superMagnetAcceleration = 30f;
+
     private bool isCollected;
+    private float currentMoveSpeed;
 
     protected virtual void Awake()
     {
@@ -23,6 +28,8 @@ public abstract class MagnetCollectible : MonoBehaviour
         {
             gameObject.tag = CollectibleTag;
         }
+
+        currentMoveSpeed = magnetMoveSpeed;
     }
 
     protected virtual void Update()
@@ -39,18 +46,61 @@ public abstract class MagnetCollectible : MonoBehaviour
         }
 
         Vector3 targetPosition = magnet.CollectionPosition;
-        if (Vector2.Distance(transform.position, targetPosition)
-            > magnet.CurrentAbsorptionRadius)
+        if (!magnet.ShouldAttract(transform.position))
         {
+            currentMoveSpeed = magnetMoveSpeed;
             return;
         }
+
+        float targetMoveSpeed = magnetMoveSpeed
+            * magnet.CurrentMoveSpeedMultiplier;
+        currentMoveSpeed = magnet.IsSuperMagnetActive
+            ? Mathf.MoveTowards(
+                currentMoveSpeed,
+                targetMoveSpeed,
+                superMagnetAcceleration * Time.deltaTime)
+            : magnetMoveSpeed;
 
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPosition,
-            magnetMoveSpeed * Time.deltaTime);
+            currentMoveSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, targetPosition) <= collectDistance)
+        {
+            TryCollectOnce(magnet);
+        }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        TryCollectFromPlayerCollider(other);
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D other)
+    {
+        TryCollectFromPlayerCollider(other);
+    }
+
+    private void TryCollectFromPlayerCollider(Collider2D other)
+    {
+        if (isCollected || LevelUpPanelController.IsPaused || other == null)
+        {
+            return;
+        }
+
+        PlayerItemMagnet magnet = other.GetComponentInParent<PlayerItemMagnet>();
+        if (magnet == null || !magnet.isActiveAndEnabled)
+        {
+            return;
+        }
+
+        TryCollectOnce(magnet);
+    }
+
+    private void TryCollectOnce(PlayerItemMagnet magnet)
+    {
+        if (!isCollected)
         {
             isCollected = TryCollect(magnet);
         }
@@ -62,5 +112,6 @@ public abstract class MagnetCollectible : MonoBehaviour
     {
         magnetMoveSpeed = Mathf.Max(0f, magnetMoveSpeed);
         collectDistance = Mathf.Max(0f, collectDistance);
+        superMagnetAcceleration = Mathf.Max(0f, superMagnetAcceleration);
     }
 }

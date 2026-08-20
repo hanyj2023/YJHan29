@@ -34,3 +34,6 @@
 33,10,32,Skill_FireBomb,화염병을 2개씩 투척합니다.,FIREBOMB,2
 34,8,33,Skill_FireBomb,화염병을 3개씩 투척합니다.,FIREBOMB,3
 35,6,34,Skill_FireBomb,화염병을 4개씩 투척합니다.,FIREBOMB,4
+36,12,0,Skill_EggUp,가까운 적에게 계란을 던져 1초마다 공격력의 30% 피해를 주는 장판을 만듭니다.,EGGPROJECTILE,30
+37,10,36,Skill_EggUp,계란 장판의 초당 피해가 공격력의 45%가 됩니다.,EGGPROJECTILE,45
+38,8,37,Skill_EggUp,계란 장판의 초당 피해가 공격력의 60%가 됩니다.,EGGPROJECTILE,60
