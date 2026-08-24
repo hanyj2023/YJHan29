@@ -16,6 +16,7 @@ public sealed class PlayerItemMagnet : MonoBehaviour
 
     private float superMagnetEndTime;
     private float superMagnetSpeedMultiplier = 1f;
+    private Collider2D collectionCollider;
 
     public float BaseAbsorptionRadius => baseAbsorptionRadius;
     public int RadiusPercent => radiusPercent;
@@ -38,6 +39,7 @@ public sealed class PlayerItemMagnet : MonoBehaviour
         }
 
         Instance = this;
+        collectionCollider = GetComponent<Collider2D>();
     }
 
     public void SetRadiusPercent(int percent)
@@ -67,6 +69,32 @@ public sealed class PlayerItemMagnet : MonoBehaviour
         return IsSuperMagnetActive
             || Vector2.Distance(collectiblePosition, CollectionPosition)
                 <= CurrentAbsorptionRadius;
+    }
+
+    public bool IsWithinCollectionDistance(
+        Vector3 collectiblePosition,
+        float extraDistance)
+    {
+        extraDistance = Mathf.Max(0f, extraDistance);
+        if (collectionCollider == null || !collectionCollider.enabled)
+        {
+            return Vector2.Distance(collectiblePosition, CollectionPosition)
+                <= extraDistance;
+        }
+
+        Vector2 collectiblePoint = collectiblePosition;
+        Vector2 closestPlayerPoint = collectionCollider.ClosestPoint(
+            collectiblePoint);
+        return Vector2.Distance(collectiblePoint, closestPlayerPoint)
+            <= extraDistance;
+    }
+
+    private void LateUpdate()
+    {
+        // Final pickup pass owned by the player. This prevents a collectible
+        // from remaining on the player because of script update order or a
+        // missed Physics2D trigger callback.
+        MagnetCollectible.CollectAllReachedItems(this);
     }
 
     private void OnDestroy()

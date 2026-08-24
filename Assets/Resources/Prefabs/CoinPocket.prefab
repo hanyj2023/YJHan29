@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8f1af6d59848dfa801046c60de2c84, type: 3}
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::CoinPocketController
-  magnetMoveSpeed: 10
-  collectDistance: 0.1
+  magnetMoveSpeed: 30
+  collectDistance: 0.75
   superMagnetAcceleration: 30
   minimumCoins: 100
   maximumCoins: 500

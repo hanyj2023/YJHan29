@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
+public enum SpawnShape
+{
+    CIRCLE,
+    LINE,
+    CROWD,
+    SQUARE,
+    TORNADO
+}
+
 [DisallowMultipleComponent]
 public sealed class StageMonsterSpawner : MonoBehaviour
 {
@@ -31,9 +40,6 @@ public sealed class StageMonsterSpawner : MonoBehaviour
     private float randomExtraDistance = 2f;
 
     private readonly List<SpawnSchedule> schedules = new List<SpawnSchedule>();
-    private readonly Dictionary<string, int> aliveByMonsterId =
-        new Dictionary<string, int>(StringComparer.Ordinal);
-
     private float stageStartTime;
 
     private void Start()
@@ -74,6 +80,7 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         {
             SpawnSchedule schedule = schedules[i];
             while (elapsed >= schedule.NextWaveTime
+                && schedule.WaveIndex < schedule.Rule.WaveCount
                 && schedule.SpawnedTotal < schedule.Rule.TotalBudget)
             {
                 RunWave(schedule);
@@ -90,50 +97,151 @@ public sealed class StageMonsterSpawner : MonoBehaviour
             rule.WaveSizeStart + (schedule.WaveIndex * rule.WaveSizeGrowth),
             rule.WaveSizeMax);
         int remainingBudget = rule.TotalBudget - schedule.SpawnedTotal;
-        int alive = GetAliveCount(rule.MonsterId);
-        int remainingAliveSlots = rule.MaxAliveCap - alive;
+        int remainingAliveSlots = rule.MaxAliveCap - schedule.AliveCount;
         int spawnCount = Mathf.Min(requested, remainingBudget, remainingAliveSlots);
+
+        if (spawnCount <= 0)
+        {
+            return;
+        }
+
+        WaveFormation formation = CreateWaveFormation();
 
         for (int i = 0; i < spawnCount; i++)
         {
-            SpawnMonster(schedule);
+            SpawnMonster(schedule, formation, i, spawnCount);
         }
     }
 
-    private void SpawnMonster(SpawnSchedule schedule)
+    private void SpawnMonster(
+        SpawnSchedule schedule,
+        WaveFormation formation,
+        int index,
+        int count)
     {
-        Vector3 spawnPosition = FindSpawnPositionOutsideView();
+        SpawnInstruction instruction = CreateSpawnInstruction(
+            schedule.Rule.SpawnShape, formation, index, count);
+        Vector3 spawnPosition = instruction.Position;
         GameObject instance = Instantiate(schedule.Prefab, spawnPosition, Quaternion.identity);
         MonsterMovement movement = instance.GetComponent<MonsterMovement>();
+        MonsterController controller = instance.GetComponent<MonsterController>();
 
-        if (movement == null)
+        if (movement == null || controller == null)
         {
             Debug.LogError(
-                $"Prefab '{schedule.Rule.MonsterId}' needs a MonsterMovement component.",
+                $"Prefab '{schedule.Rule.MonsterId}' needs MonsterMovement and MonsterController components.",
                 instance);
             Destroy(instance);
             return;
         }
 
-        string monsterId = schedule.Rule.MonsterId;
+        float maxHP = schedule.Rule.MaxHP > 0f
+            ? schedule.Rule.MaxHP
+            : controller.MaxHP;
+        float attackDamage = schedule.Rule.AttackDamage >= 0f
+            ? schedule.Rule.AttackDamage
+            : controller.AttackDamage;
+        controller.InitializeStats(maxHP, attackDamage);
         schedule.SpawnedTotal++;
-        aliveByMonsterId[monsterId] = GetAliveCount(monsterId) + 1;
-        movement.Initialize(player, () => DecreaseAliveCount(monsterId));
+        schedule.AliveCount++;
+        movement.Initialize(
+            player,
+            () => DecreaseAliveCount(schedule),
+            schedule.Rule.SpawnShape,
+            instruction.TornadoDirection,
+            instruction.Phase);
     }
 
-    private Vector3 FindSpawnPositionOutsideView()
+    private WaveFormation CreateWaveFormation()
     {
-        float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
-        Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         Vector3 playerPosition = player.position;
         float circleRadius = CalculateRadiusOutsideCameraView(playerPosition);
-
         float extraDistance = outsidePadding
             + UnityEngine.Random.Range(0f, randomExtraDistance);
-        Vector3 result = playerPosition
-            + (Vector3)(direction * (circleRadius + extraDistance));
-        result.z = playerPosition.z;
-        return result;
+        int tornadoDirection = UnityEngine.Random.value < 0.5f ? -1 : 1;
+        return new WaveFormation(
+            playerPosition,
+            circleRadius + extraDistance,
+            UnityEngine.Random.Range(0f, Mathf.PI * 2f),
+            tornadoDirection);
+    }
+
+    private static SpawnInstruction CreateSpawnInstruction(
+        SpawnShape shape,
+        WaveFormation formation,
+        int index,
+        int count)
+    {
+        float phase = count <= 0 ? 0f : index * Mathf.PI * 2f / count;
+        Vector2 offset;
+
+        switch (shape)
+        {
+            case SpawnShape.LINE:
+            {
+                Vector2 inwardAxis = DirectionFromAngle(formation.Rotation);
+                Vector2 lineAxis = new Vector2(-inwardAxis.y, inwardAxis.x);
+                const float lineSpacing = 1.35f;
+                offset = inwardAxis * formation.Radius
+                    + lineAxis * ((index - ((count - 1) * 0.5f)) * lineSpacing);
+                break;
+            }
+            case SpawnShape.CROWD:
+            {
+                Vector2 crowdCenter = DirectionFromAngle(formation.Rotation) * formation.Radius;
+                float clusterAngle = index * 2.399963f;
+                float clusterRadius = 0.55f * Mathf.Sqrt(index);
+                offset = crowdCenter + DirectionFromAngle(clusterAngle) * clusterRadius;
+                break;
+            }
+            case SpawnShape.SQUARE:
+            {
+                Vector2 perimeter = PointOnSquarePerimeter((index + 0.5f) / count);
+                offset = Rotate(perimeter, formation.Rotation) * formation.Radius;
+                break;
+            }
+            case SpawnShape.TORNADO:
+            case SpawnShape.CIRCLE:
+            default:
+            {
+                float angle = formation.Rotation + phase;
+                offset = DirectionFromAngle(angle) * formation.Radius;
+                break;
+            }
+        }
+
+        Vector3 position = formation.Center + (Vector3)offset;
+        position.z = formation.Center.z;
+        return new SpawnInstruction(position, formation.TornadoDirection, phase);
+    }
+
+    private static Vector2 PointOnSquarePerimeter(float progress)
+    {
+        float sideProgress = Mathf.Repeat(progress, 1f) * 4f;
+        int side = Mathf.FloorToInt(sideProgress);
+        float t = sideProgress - side;
+
+        switch (side)
+        {
+            case 0: return new Vector2(-1f + (2f * t), 1f);
+            case 1: return new Vector2(1f, 1f - (2f * t));
+            case 2: return new Vector2(1f - (2f * t), -1f);
+            default: return new Vector2(-1f, -1f + (2f * t));
+        }
+    }
+
+    private static Vector2 DirectionFromAngle(float angle)
+    {
+        return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+    }
+
+    private static Vector2 Rotate(Vector2 point, float angle)
+    {
+        float cosine = Mathf.Cos(angle);
+        float sine = Mathf.Sin(angle);
+        return new Vector2(
+            point.x * cosine - point.y * sine,
+            point.x * sine + point.y * cosine);
     }
 
     private float CalculateRadiusOutsideCameraView(Vector3 center)
@@ -169,7 +277,7 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         {
             "StageId", "MonsterId", "SpawnStartSec", "WaveIntervalSec",
             "WaveSizeStart", "WaveSizeGrowth", "WaveSizeMax", "TotalBudget",
-            "MaxAliveCap"
+            "MaxAliveCap", "SpawnShape"
         };
 
         for (int i = 0; i < requiredColumns.Length; i++)
@@ -243,15 +351,9 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         return false;
     }
 
-    private int GetAliveCount(string monsterId)
+    private static void DecreaseAliveCount(SpawnSchedule schedule)
     {
-        return aliveByMonsterId.TryGetValue(monsterId, out int count) ? count : 0;
-    }
-
-    private void DecreaseAliveCount(string monsterId)
-    {
-        int nextCount = Mathf.Max(0, GetAliveCount(monsterId) - 1);
-        aliveByMonsterId[monsterId] = nextCount;
+        schedule.AliveCount = Mathf.Max(0, schedule.AliveCount - 1);
     }
 
     private static Dictionary<string, int> BuildColumnMap(string[] headers)
@@ -280,8 +382,41 @@ public sealed class StageMonsterSpawner : MonoBehaviour
             WaveSizeGrowth = int.Parse(GetValue(values, columns, "WaveSizeGrowth"), culture),
             WaveSizeMax = int.Parse(GetValue(values, columns, "WaveSizeMax"), culture),
             TotalBudget = int.Parse(GetValue(values, columns, "TotalBudget"), culture),
-            MaxAliveCap = int.Parse(GetValue(values, columns, "MaxAliveCap"), culture)
+            MaxAliveCap = int.Parse(GetValue(values, columns, "MaxAliveCap"), culture),
+            SpawnShape = ParseSpawnShape(GetValue(values, columns, "SpawnShape")),
+            WaveCount = GetOptionalInt(values, columns, "WaveCount", int.MaxValue, culture),
+            MaxHP = GetOptionalFloat(values, columns, "MaxHP", -1f, culture),
+            AttackDamage = GetOptionalFloat(values, columns, "AttackDamage", -1f, culture)
         };
+    }
+
+    private static SpawnShape ParseSpawnShape(string value)
+    {
+        if (Enum.TryParse(value.Trim(), true, out SpawnShape result))
+        {
+            return result;
+        }
+
+        throw new FormatException(
+            $"SpawnShape '{value}' is invalid. Use CIRCLE, LINE, CROWD, SQUARE, or TORNADO.");
+    }
+
+    private static int GetOptionalInt(
+        string[] values, Dictionary<string, int> columns, string column,
+        int fallback, CultureInfo culture)
+    {
+        return columns.ContainsKey(column)
+            ? int.Parse(GetValue(values, columns, column), culture)
+            : fallback;
+    }
+
+    private static float GetOptionalFloat(
+        string[] values, Dictionary<string, int> columns, string column,
+        float fallback, CultureInfo culture)
+    {
+        return columns.ContainsKey(column)
+            ? float.Parse(GetValue(values, columns, column), culture)
+            : fallback;
     }
 
     private static string GetValue(
@@ -339,6 +474,7 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         public readonly GameObject Prefab;
         public int WaveIndex;
         public int SpawnedTotal;
+        public int AliveCount;
         public float NextWaveTime;
 
         public SpawnSchedule(StageMonsterRule rule, GameObject prefab)
@@ -360,6 +496,10 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         public int WaveSizeMax;
         public int TotalBudget;
         public int MaxAliveCap;
+        public SpawnShape SpawnShape;
+        public int WaveCount;
+        public float MaxHP;
+        public float AttackDamage;
 
         public bool IsValid(out string reason)
         {
@@ -376,14 +516,50 @@ public sealed class StageMonsterSpawner : MonoBehaviour
             }
 
             if (WaveSizeStart < 0 || WaveSizeGrowth < 0 || WaveSizeMax < 0
-                || TotalBudget < 0 || MaxAliveCap < 0)
+                || TotalBudget < 0 || MaxAliveCap < 0 || WaveCount < 0)
             {
                 reason = "Spawn counts cannot be negative.";
                 return false;
             }
 
+            if ((MaxHP >= 0f && MaxHP < 1f) || AttackDamage < -1f)
+            {
+                reason = "MaxHP must be at least 1 and AttackDamage cannot be negative.";
+                return false;
+            }
+
             reason = string.Empty;
             return true;
+        }
+    }
+
+    private readonly struct WaveFormation
+    {
+        public readonly Vector3 Center;
+        public readonly float Radius;
+        public readonly float Rotation;
+        public readonly int TornadoDirection;
+
+        public WaveFormation(Vector3 center, float radius, float rotation, int tornadoDirection)
+        {
+            Center = center;
+            Radius = radius;
+            Rotation = rotation;
+            TornadoDirection = tornadoDirection;
+        }
+    }
+
+    private readonly struct SpawnInstruction
+    {
+        public readonly Vector3 Position;
+        public readonly int TornadoDirection;
+        public readonly float Phase;
+
+        public SpawnInstruction(Vector3 position, int tornadoDirection, float phase)
+        {
+            Position = position;
+            TornadoDirection = tornadoDirection;
+            Phase = phase;
         }
     }
 }

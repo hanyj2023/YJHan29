@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +8,9 @@ using UnityEngine;
 public abstract class MagnetCollectible : MonoBehaviour
 {
     public const string CollectibleTag = "MagnetCollectible";
+
+    private static readonly List<MagnetCollectible> ActiveCollectibles =
+        new List<MagnetCollectible>();
 
     [Header("Magnet Movement")]
     [SerializeField, Min(0f)]
@@ -30,6 +34,19 @@ public abstract class MagnetCollectible : MonoBehaviour
         }
 
         currentMoveSpeed = magnetMoveSpeed;
+    }
+
+    protected virtual void OnEnable()
+    {
+        if (!ActiveCollectibles.Contains(this))
+        {
+            ActiveCollectibles.Add(this);
+        }
+    }
+
+    protected virtual void OnDisable()
+    {
+        ActiveCollectibles.Remove(this);
     }
 
     protected virtual void Update()
@@ -66,10 +83,10 @@ public abstract class MagnetCollectible : MonoBehaviour
             targetPosition,
             currentMoveSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, targetPosition) <= collectDistance)
-        {
-            TryCollectOnce(magnet);
-        }
+        // Do not rely solely on trigger callbacks. Some projects disable
+        // contacts between the collectible and player layers, and checking
+        // only the two transform centers makes tall player colliders miss.
+        TryCollectIfReached(magnet);
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -103,6 +120,42 @@ public abstract class MagnetCollectible : MonoBehaviour
         if (!isCollected)
         {
             isCollected = TryCollect(magnet);
+        }
+    }
+
+    public void TryCollectIfReached(PlayerItemMagnet magnet)
+    {
+        if (isCollected || magnet == null || !isActiveAndEnabled
+            || LevelUpPanelController.IsPaused)
+        {
+            return;
+        }
+
+        if (magnet.IsWithinCollectionDistance(
+            transform.position,
+            collectDistance))
+        {
+            TryCollectOnce(magnet);
+        }
+    }
+
+    public static void CollectAllReachedItems(PlayerItemMagnet magnet)
+    {
+        for (int i = ActiveCollectibles.Count - 1; i >= 0; i--)
+        {
+            if (i >= ActiveCollectibles.Count)
+            {
+                continue;
+            }
+
+            MagnetCollectible collectible = ActiveCollectibles[i];
+            if (collectible == null)
+            {
+                ActiveCollectibles.RemoveAt(i);
+                continue;
+            }
+
+            collectible.TryCollectIfReached(magnet);
         }
     }
 

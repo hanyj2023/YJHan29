@@ -49,6 +49,19 @@ public sealed class MonsterController : MonoBehaviour, ICombatTarget
         currentHP = maxHP;
     }
 
+    /// <summary>
+    /// Applies the stats of a StageMonster row to this spawned instance.
+    /// This intentionally does not modify the prefab, allowing the same prefab
+    /// to appear multiple times with different stats in one stage.
+    /// </summary>
+    public void InitializeStats(float stageMaxHP, float stageAttackDamage)
+    {
+        maxHP = Mathf.Max(1f, stageMaxHP);
+        attackDamge = Mathf.Max(0f, stageAttackDamage);
+        currentHP = maxHP;
+        isDead = false;
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         TryDamagePlayer(other);

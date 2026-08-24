@@ -19,6 +19,9 @@ public sealed class MonsterMovement : MonoBehaviour
     private Rigidbody2D body;
     private Transform target;
     private Action onDestroyed;
+    private SpawnShape spawnShape;
+    private int tornadoDirection = 1;
+    private float movementPhase;
     private bool initialized;
 
     private void Awake()
@@ -34,8 +37,21 @@ public sealed class MonsterMovement : MonoBehaviour
 
     public void Initialize(Transform followTarget, Action destroyedCallback)
     {
+        Initialize(followTarget, destroyedCallback, SpawnShape.CIRCLE, 1, 0f);
+    }
+
+    public void Initialize(
+        Transform followTarget,
+        Action destroyedCallback,
+        SpawnShape shape,
+        int spinDirection,
+        float phase)
+    {
         target = followTarget;
         onDestroyed = destroyedCallback;
+        spawnShape = shape;
+        tornadoDirection = spinDirection < 0 ? -1 : 1;
+        movementPhase = phase;
         initialized = true;
         UpdateFacingDirection();
     }
@@ -56,8 +72,27 @@ public sealed class MonsterMovement : MonoBehaviour
             return;
         }
 
-        Vector2 direction = ((Vector2)target.position - body.position).normalized;
+        Vector2 toTarget = (Vector2)target.position - body.position;
+        Vector2 direction = CalculateMovementDirection(toTarget);
         body.MovePosition(body.position + direction * (moveSpeed * Time.fixedDeltaTime));
+    }
+
+    private Vector2 CalculateMovementDirection(Vector2 toTarget)
+    {
+        if (toTarget.sqrMagnitude <= Mathf.Epsilon)
+        {
+            return Vector2.zero;
+        }
+
+        Vector2 inward = toTarget.normalized;
+        if (spawnShape != SpawnShape.TORNADO)
+        {
+            return inward;
+        }
+
+        Vector2 tangent = new Vector2(-inward.y, inward.x) * tornadoDirection;
+        float pulse = 0.85f + 0.15f * Mathf.Sin(Time.time * 2.5f + movementPhase);
+        return (inward + tangent * pulse).normalized;
     }
 
     private void UpdateFacingDirection()
