@@ -1,0 +1,62 @@
+StringKey,KOR,ENG
+game.title,지옥의 주방,Hell Kitchen
+ui.home.stage_select,스테이지 선택,Stage Select
+ui.home.start,시작,START
+ui.home.exit,종료,EXIT
+ui.home.upgrade,업그레이드,UPGRADE
+ui.common.close,X,X
+ui.common.max,MAX,MAX
+ui.common.number_format,{0:N0},{0:N0}
+ui.game.replay,다시 하기,Replay
+ui.game.home,홈,Home
+ui.game.level_format,레벨 : {0},Level : {0}
+ui.game.coin_format,코인 : {0:N0},Coin : {0:N0}
+ui.game.time_format,{0:00}:{1:00},{0:00}:{1:00}
+ui.language.korean,한국어,Korean
+ui.language.english,영어,English
+stage.1.name,주방,Kitchen
+stage.2.name,숲,Forest
+status.attack_power,공격력,Attack Power
+status.move_speed,이동 속도,Move Speed
+status.magnet_radius,자석 반경,Magnet Radius
+status.critical_chance,치명타율,Critical Chance
+status.critical_damage,치명타 대미지 배율,Critical Damage Multiplier
+status.revive,부활,Revive
+card.1.desc,공격력이 105%가 됩니다.,Attack power becomes 105%.
+card.2.desc,공격력이 110%가 됩니다.,Attack power becomes 110%.
+card.3.desc,공격력이 115%가 됩니다.,Attack power becomes 115%.
+card.4.desc,공격력이 120%가 됩니다.,Attack power becomes 120%.
+card.5.desc,공격력이 125%가 됩니다.,Attack power becomes 125%.
+card.6.desc,공격력이 130%가 됩니다.,Attack power becomes 130%.
+card.7.desc,공격력이 135%가 됩니다.,Attack power becomes 135%.
+card.8.desc,공격력이 140%가 됩니다.,Attack power becomes 140%.
+card.9.desc,공격력이 145%가 됩니다.,Attack power becomes 145%.
+card.10.desc,공격력이 150%가 됩니다.,Attack power becomes 150%.
+card.11.desc,공격력이 155%가 됩니다.,Attack power becomes 155%.
+card.12.desc,공격력이 160%가 됩니다.,Attack power becomes 160%.
+card.13.desc,공격력이 165%가 됩니다.,Attack power becomes 165%.
+card.14.desc,공격력이 200%가 됩니다.,Attack power becomes 200%.
+card.15.desc,공격력이 250%가 됩니다.,Attack power becomes 250%.
+card.16.desc,가한 실제 대미지의 10%만큼 체력을 회복합니다.,Recover HP equal to 10% of the actual damage dealt.
+card.17.desc,가한 실제 대미지의 20%만큼 체력을 회복합니다.,Recover HP equal to 20% of the actual damage dealt.
+card.18.desc,가한 실제 대미지의 30%만큼 체력을 회복합니다.,Recover HP equal to 30% of the actual damage dealt.
+card.19.desc,모든 아이템의 흡수 범위가 125%가 됩니다.,Pickup range for all items becomes 125%.
+card.20.desc,모든 아이템의 흡수 범위가 150%가 됩니다.,Pickup range for all items becomes 150%.
+card.21.desc,모든 아이템의 흡수 범위가 200%가 됩니다.,Pickup range for all items becomes 200%.
+card.22.desc,반대 방향 투사체가 추가되어 총 2개를 발사합니다.,Adds a projectile in the opposite direction for 2 total.
+card.23.desc,위 방향 투사체가 추가되어 총 3개를 발사합니다.,Adds an upward projectile for 3 total.
+card.24.desc,아래 방향 투사체가 추가되어 총 4개를 발사합니다.,Adds a downward projectile for 4 total.
+card.25.desc,플레이어 주변을 도는 불덩이 1개를 생성합니다.,Creates 1 fireball that orbits the player.
+card.26.desc,플레이어 주변의 불덩이를 2개로 교체합니다.,Replaces the orbiting fireballs with 2.
+card.27.desc,플레이어 주변의 불덩이를 3개로 교체합니다.,Replaces the orbiting fireballs with 3.
+card.28.desc,플레이어 주변의 불덩이를 4개로 교체합니다.,Replaces the orbiting fireballs with 4.
+card.29.desc,처치한 적이 10% 확률로 폭발합니다.,Defeated enemies have a 10% chance to explode.
+card.30.desc,처치한 적이 25% 확률로 폭발합니다.,Defeated enemies have a 25% chance to explode.
+card.31.desc,처치한 적이 50% 확률로 폭발합니다.,Defeated enemies have a 50% chance to explode.
+card.32.desc,화염병을 투척해 착탄 지점에 화염 폭발을 일으킵니다.,Throws a firebomb that causes a fiery explosion on impact.
+card.33.desc,화염병을 2개씩 투척합니다.,Throws 2 firebombs at a time.
+card.34.desc,화염병을 3개씩 투척합니다.,Throws 3 firebombs at a time.
+card.35.desc,화염병을 4개씩 투척합니다.,Throws 4 firebombs at a time.
+card.36.desc,가까운 적에게 계란을 던져 1초마다 공격력의 30% 피해를 주는 장판을 만듭니다.,Throws an egg at the nearest enemy and creates an area that deals 30% ATK damage every second.
+card.37.desc,계란 장판의 초당 피해가 공격력의 45%가 됩니다.,Egg area damage per second becomes 45% of ATK.
+card.38.desc,계란 장판의 초당 피해가 공격력의 60%가 됩니다.,Egg area damage per second becomes 60% of ATK.

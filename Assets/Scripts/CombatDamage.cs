@@ -75,17 +75,20 @@ public static class CombatDamage
             return 0f;
         }
 
+        float resolvedDamage = attacker == null
+            ? requestedDamage
+            : attacker.RollCriticalDamage(requestedDamage);
         float appliedDamage = Mathf.Clamp(
-            target.ApplyDamage(requestedDamage),
+            target.ApplyDamage(resolvedDamage),
             0f,
-            requestedDamage);
+            resolvedDamage);
 
         if (appliedDamage > 0f)
         {
             DamageConfirmed?.Invoke(new ConfirmedDamage(
                 target,
                 attacker,
-                requestedDamage,
+                resolvedDamage,
                 appliedDamage));
         }
 

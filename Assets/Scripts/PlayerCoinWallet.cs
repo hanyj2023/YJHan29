@@ -19,7 +19,9 @@ public sealed class PlayerCoinWallet : MonoBehaviour
     private void Awake()
     {
         ResolveCoinText();
-        currentCoins = 0;
+        currentCoins = PlayerPreference.Coins;
+        PlayerPreference.CoinsChanged += OnPersistentCoinsChanged;
+        LocalizationManager.LanguageChanged += UpdateCoinUI;
         UpdateCoinUI();
     }
 
@@ -30,9 +32,7 @@ public sealed class PlayerCoinWallet : MonoBehaviour
             return;
         }
 
-        currentCoins += amount;
-        UpdateCoinUI();
-        CoinsChanged?.Invoke(currentCoins);
+        PlayerPreference.AddCoins(amount);
     }
 
     private void ResolveCoinText()
@@ -61,9 +61,22 @@ public sealed class PlayerCoinWallet : MonoBehaviour
     {
         if (coinText != null)
         {
-            coinText.text = "Coin : " + currentCoins.ToString(
-                "N0",
-                CultureInfo.InvariantCulture);
+            LocalizedText localized = coinText.GetComponent<LocalizedText>()
+                ?? coinText.gameObject.AddComponent<LocalizedText>();
+            localized.SetKey("ui.game.coin_format", currentCoins);
         }
+    }
+
+    private void OnPersistentCoinsChanged(long coins)
+    {
+        currentCoins = coins;
+        UpdateCoinUI();
+        CoinsChanged?.Invoke(currentCoins);
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPreference.CoinsChanged -= OnPersistentCoinsChanged;
+        LocalizationManager.LanguageChanged -= UpdateCoinUI;
     }
 }

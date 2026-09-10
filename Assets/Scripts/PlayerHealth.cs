@@ -13,6 +13,9 @@ public sealed class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField, Min(0f)]
     private float invincibleTime = 1f;
 
+    [SerializeField, Min(0)]
+    private int remainingRevives = 0;
+
     [Header("References")]
     [SerializeField]
     private Image hpImage = null;
@@ -33,12 +36,16 @@ public sealed class PlayerHealth : MonoBehaviour, IDamageable
     public float CurrentHP => currentHP;
     public bool IsInvincible => isInvincible;
     public bool IsDead => isDead;
+    public int RemainingRevives => remainingRevives;
 
     public event Action<float, float> HealthChanged;
     public event Action Died;
 
     private void Awake()
     {
+        remainingRevives = Mathf.RoundToInt(StatusUpgradeTable.GetSavedValue(
+            PersistentStatusType.Revive));
+
         if (hpImage == null)
         {
             Image[] childImages = GetComponentsInChildren<Image>(true);
@@ -172,11 +179,20 @@ public sealed class PlayerHealth : MonoBehaviour, IDamageable
 
     private void HandleDeath()
     {
+        if (remainingRevives > 0)
+        {
+            remainingRevives--;
+            currentHP = maxHP;
+            NotifyHealthChanged();
+            if (invincibilityRoutine != null)
+                StopCoroutine(invincibilityRoutine);
+            invincibilityRoutine = StartCoroutine(InvincibilityEffect());
+            return;
+        }
+
         isDead = true;
         isInvincible = false;
         Died?.Invoke();
-
-        // TODO: Connect the game-over UI/manager here when it is implemented.
     }
 
     private void OnDisable()

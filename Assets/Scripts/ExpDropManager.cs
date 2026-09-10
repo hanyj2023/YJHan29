@@ -78,6 +78,7 @@ public sealed class ExpDropManager : MonoBehaviour
 
         RecalculateLevel();
         UpdateLevelText();
+        LocalizationManager.LanguageChanged += UpdateLevelText;
         SetExperienceBarImmediate(CalculateBarRatio());
     }
 
@@ -255,7 +256,9 @@ public sealed class ExpDropManager : MonoBehaviour
     {
         if (levelText != null)
         {
-            levelText.text = $"Level : {currentLevel}";
+            LocalizedText localized = levelText.GetComponent<LocalizedText>()
+                ?? levelText.gameObject.AddComponent<LocalizedText>();
+            localized.SetKey("ui.game.level_format", currentLevel);
         }
     }
 
@@ -310,6 +313,7 @@ public sealed class ExpDropManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        LocalizationManager.LanguageChanged -= UpdateLevelText;
         if (Instance == this)
         {
             Instance = null;

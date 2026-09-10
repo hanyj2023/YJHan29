@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterController
   maxHP: 15
-  attackDamge: 4.516212
+  attackDamge: 4.6722884
   expDrops:
   - orbPrefab: {fileID: 6811903026065241175, guid: 513f164ab5378d54ba7f76823d143738, type: 3}
     dropChance: 60

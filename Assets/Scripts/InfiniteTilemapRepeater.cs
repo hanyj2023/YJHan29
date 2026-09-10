@@ -24,7 +24,8 @@ public sealed class InfiniteTilemapRepeater : MonoBehaviour
     private Vector2 patternCenter;
     private Vector2Int currentCenterChunk = new(int.MinValue, int.MinValue);
 
-    private void Awake()
+    // StageMapController selects the active source during Awake.
+    private void Start()
     {
         sourceTilemap = GetComponent<Tilemap>();
         sourceRenderer = GetComponent<TilemapRenderer>();

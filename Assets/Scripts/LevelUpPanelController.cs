@@ -61,7 +61,8 @@ public sealed class LevelUpPanelController : MonoBehaviour
     private float timeScaleBeforePause = 1f;
     private int presentedLevel;
 
-    public static bool IsPaused { get; private set; }
+    private static bool isLevelUpPaused;
+    public static bool IsPaused => isLevelUpPaused || GameSessionController.HasEnded;
     public bool IsPanelOpen => levelUpPanel != null && levelUpPanel.activeSelf;
     public int PendingLevelUpCount => pendingLevels.Count + (IsPanelOpen ? 1 : 0);
     public IReadOnlyCollection<int> SelectedCardIds => selectedCardIds;
@@ -120,6 +121,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
         card1.onClick.AddListener(OnCard1Selected);
         card2.onClick.AddListener(OnCard2Selected);
         card3.onClick.AddListener(OnCard3Selected);
+        LocalizationManager.LanguageChanged += RefreshLocalizedCards;
     }
 
     private void OnLevelChanged(int newLevel)
@@ -207,6 +209,14 @@ public sealed class LevelUpPanelController : MonoBehaviour
     private void OnCard2Selected() => SelectCard(1);
     private void OnCard3Selected() => SelectCard(2);
 
+    private void RefreshLocalizedCards()
+    {
+        foreach (CardView view in cardViews)
+        {
+            view?.RefreshLocalization();
+        }
+    }
+
     private void SelectCard(int cardIndex)
     {
         if (!IsPanelOpen || cardIndex < 0 || cardIndex >= cardViews.Length)
@@ -287,18 +297,18 @@ public sealed class LevelUpPanelController : MonoBehaviour
 
         timeScaleBeforePause = Time.timeScale;
         Time.timeScale = 0f;
-        IsPaused = true;
+        isLevelUpPaused = true;
     }
 
     private void ResumeGame()
     {
-        if (!IsPaused)
+        if (!isLevelUpPaused)
         {
             return;
         }
 
         Time.timeScale = timeScaleBeforePause;
-        IsPaused = false;
+        isLevelUpPaused = false;
     }
 
     private void ResolveReferences()
@@ -365,6 +375,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
         card1?.onClick.RemoveListener(OnCard1Selected);
         card2?.onClick.RemoveListener(OnCard2Selected);
         card3?.onClick.RemoveListener(OnCard3Selected);
+        LocalizationManager.LanguageChanged -= RefreshLocalizedCards;
 
         if (showNextRoutine != null)
         {
@@ -385,6 +396,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
     {
         private readonly Image iconImage;
         private readonly TMP_Text descriptionText;
+        private readonly LocalizedText localizedDescription;
 
         public LevelUpCardData Data { get; private set; }
 
@@ -392,6 +404,8 @@ public sealed class LevelUpPanelController : MonoBehaviour
         {
             this.iconImage = iconImage;
             this.descriptionText = descriptionText;
+            localizedDescription = descriptionText.GetComponent<LocalizedText>()
+                ?? descriptionText.gameObject.AddComponent<LocalizedText>();
         }
 
         public static CardView TryCreate(Button button)
@@ -430,7 +444,7 @@ public sealed class LevelUpPanelController : MonoBehaviour
         public void Display(LevelUpCardData card, UnityEngine.Object logContext)
         {
             Data = card;
-            descriptionText.text = card.Description;
+            localizedDescription.SetKey(card.DescriptionKey);
             iconImage.sprite = Resources.Load<Sprite>($"Sprites/{card.Icon}");
             iconImage.enabled = iconImage.sprite != null;
 
@@ -439,6 +453,14 @@ public sealed class LevelUpPanelController : MonoBehaviour
                 Debug.LogError(
                     $"Card ID {card.Id} icon 'Resources/Sprites/{card.Icon}' was not found.",
                     logContext);
+            }
+        }
+
+        public void RefreshLocalization()
+        {
+            if (Data != null)
+            {
+                localizedDescription.SetKey(Data.DescriptionKey);
             }
         }
     }

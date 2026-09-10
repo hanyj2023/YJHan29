@@ -1,0 +1,7 @@
+StatusNameKey,Level0,Level1,Level2,Level3,Level4,Level5,UpgradeCost
+status.attack_power,12,14,16,18,20,25,100
+status.move_speed,5,5.5,6,6.5,7,7.5,100
+status.magnet_radius,3,3.5,4,4.5,5,6,100
+status.critical_chance,5,10,15,20,25,30,150
+status.critical_damage,1.5,1.6,1.7,1.8,1.9,2,150
+status.revive,0,1,2,3,4,5,300

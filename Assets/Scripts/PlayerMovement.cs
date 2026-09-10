@@ -22,6 +22,8 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        moveSpeed = StatusUpgradeTable.GetSavedValue(
+            PersistentStatusType.MoveSpeed);
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 

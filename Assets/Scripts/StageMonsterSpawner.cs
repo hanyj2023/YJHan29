@@ -42,6 +42,11 @@ public sealed class StageMonsterSpawner : MonoBehaviour
     private readonly List<SpawnSchedule> schedules = new List<SpawnSchedule>();
     private float stageStartTime;
 
+    public int CurrentStageId => currentStageId;
+
+    // Called during scene initialization, before Start builds the spawn schedules.
+    public void SetStage(int stageId) => currentStageId = stageId;
+
     private void Start()
     {
         if (!ResolveSceneReferences())
@@ -74,6 +79,9 @@ public sealed class StageMonsterSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (LevelUpPanelController.IsPaused)
+            return;
+
         float elapsed = Time.time - stageStartTime;
 
         for (int i = 0; i < schedules.Count; i++)
@@ -427,7 +435,7 @@ public sealed class StageMonsterSpawner : MonoBehaviour
         return values[columns[column]];
     }
 
-    private static string[] ParseCsvLine(string line)
+    internal static string[] ParseCsvLine(string line)
     {
         List<string> values = new List<string>();
         bool inQuotes = false;

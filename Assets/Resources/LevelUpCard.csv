@@ -1,39 +1,39 @@
-﻿ID,Rate,Required,Icon,Desc,Effect,Value
-1,1,0,Skill_ATKUp,공격력이 105%가 됩니다.,ATKUp,105
-2,1,1,Skill_ATKUp,공격력이 110%가 됩니다.,ATKUp,110
-3,1,2,Skill_ATKUp,공격력이 115%가 됩니다.,ATKUp,115
-4,10,3,Skill_ATKUp,공격력이 120%가 됩니다.,ATKUp,120
-5,10,4,Skill_ATKUp,공격력이 125%가 됩니다.,ATKUp,125
-6,9,5,Skill_ATKUp,공격력이 130%가 됩니다.,ATKUp,130
-7,9,6,Skill_ATKUp,공격력이 135%가 됩니다.,ATKUp,135
-8,8,7,Skill_ATKUp,공격력이 140%가 됩니다.,ATKUp,140
-9,8,8,Skill_ATKUp,공격력이 145%가 됩니다.,ATKUp,145
-10,7,9,Skill_ATKUp,공격력이 150%가 됩니다.,ATKUp,150
-11,7,10,Skill_ATKUp,공격력이 155%가 됩니다.,ATKUp,155
-12,6,11,Skill_ATKUp,공격력이 160%가 됩니다.,ATKUp,160
-13,6,12,Skill_ATKUp,공격력이 165%가 됩니다.,ATKUp,165
-14,5,13,Skill_ATKUp,공격력이 200%가 됩니다.,ATKUp,200
-15,5,14,Skill_ATKUp,공격력이 250%가 됩니다.,ATKUp,250
-16,12,0,Skill_Heal,가한 실제 대미지의 10%만큼 체력을 회복합니다.,HEAL,10
-17,10,16,Skill_Heal,가한 실제 대미지의 20%만큼 체력을 회복합니다.,HEAL,20
-18,8,17,Skill_Heal,가한 실제 대미지의 30%만큼 체력을 회복합니다.,HEAL,30
-19,12,0,Skill_Magnet,모든 아이템의 흡수 범위가 125%가 됩니다.,MAGNET,125
-20,10,19,Skill_Magnet,모든 아이템의 흡수 범위가 150%가 됩니다.,MAGNET,150
-21,8,20,Skill_Magnet,모든 아이템의 흡수 범위가 200%가 됩니다.,MAGNET,200
-22,12,0,Skill_Plus1,반대 방향 투사체가 추가되어 총 2개를 발사합니다.,PLUS1,2
-23,10,22,Skill_Plus1,위 방향 투사체가 추가되어 총 3개를 발사합니다.,PLUS1,3
-24,8,23,Skill_Plus1,아래 방향 투사체가 추가되어 총 4개를 발사합니다.,PLUS1,4
-25,12,0,Skill_Fire,플레이어 주변을 도는 불덩이 1개를 생성합니다.,FIRERING,1
-26,10,25,Skill_Fire,플레이어 주변의 불덩이를 2개로 교체합니다.,FIRERING,2
-27,8,26,Skill_Fire,플레이어 주변의 불덩이를 3개로 교체합니다.,FIRERING,3
-28,6,27,Skill_Fire,플레이어 주변의 불덩이를 4개로 교체합니다.,FIRERING,4
-29,12,0,Skill_Explosion,처치한 적이 10% 확률로 폭발합니다.,EXPLOSION,10
-30,10,29,Skill_Explosion,처치한 적이 25% 확률로 폭발합니다.,EXPLOSION,25
-31,8,30,Skill_Explosion,처치한 적이 50% 확률로 폭발합니다.,EXPLOSION,50
-32,12,0,Skill_FireBomb,화염병을 투척해 착탄 지점에 화염 폭발을 일으킵니다.,FIREBOMB,1
-33,10,32,Skill_FireBomb,화염병을 2개씩 투척합니다.,FIREBOMB,2
-34,8,33,Skill_FireBomb,화염병을 3개씩 투척합니다.,FIREBOMB,3
-35,6,34,Skill_FireBomb,화염병을 4개씩 투척합니다.,FIREBOMB,4
-36,12,0,Skill_EggUp,가까운 적에게 계란을 던져 1초마다 공격력의 30% 피해를 주는 장판을 만듭니다.,EGGPROJECTILE,30
-37,10,36,Skill_EggUp,계란 장판의 초당 피해가 공격력의 45%가 됩니다.,EGGPROJECTILE,45
-38,8,37,Skill_EggUp,계란 장판의 초당 피해가 공격력의 60%가 됩니다.,EGGPROJECTILE,60
+ID,Rate,Required,Icon,DescStringKey,Effect,Value
+1,1,0,Skill_ATKUp,card.1.desc,ATKUp,105
+2,1,1,Skill_ATKUp,card.2.desc,ATKUp,110
+3,1,2,Skill_ATKUp,card.3.desc,ATKUp,115
+4,10,3,Skill_ATKUp,card.4.desc,ATKUp,120
+5,10,4,Skill_ATKUp,card.5.desc,ATKUp,125
+6,9,5,Skill_ATKUp,card.6.desc,ATKUp,130
+7,9,6,Skill_ATKUp,card.7.desc,ATKUp,135
+8,8,7,Skill_ATKUp,card.8.desc,ATKUp,140
+9,8,8,Skill_ATKUp,card.9.desc,ATKUp,145
+10,7,9,Skill_ATKUp,card.10.desc,ATKUp,150
+11,7,10,Skill_ATKUp,card.11.desc,ATKUp,155
+12,6,11,Skill_ATKUp,card.12.desc,ATKUp,160
+13,6,12,Skill_ATKUp,card.13.desc,ATKUp,165
+14,5,13,Skill_ATKUp,card.14.desc,ATKUp,200
+15,5,14,Skill_ATKUp,card.15.desc,ATKUp,250
+16,12,0,Skill_Heal,card.16.desc,HEAL,10
+17,10,16,Skill_Heal,card.17.desc,HEAL,20
+18,8,17,Skill_Heal,card.18.desc,HEAL,30
+19,12,0,Skill_Magnet,card.19.desc,MAGNET,125
+20,10,19,Skill_Magnet,card.20.desc,MAGNET,150
+21,8,20,Skill_Magnet,card.21.desc,MAGNET,200
+22,12,0,Skill_Plus1,card.22.desc,PLUS1,2
+23,10,22,Skill_Plus1,card.23.desc,PLUS1,3
+24,8,23,Skill_Plus1,card.24.desc,PLUS1,4
+25,12,0,Skill_Fire,card.25.desc,FIRERING,1
+26,10,25,Skill_Fire,card.26.desc,FIRERING,2
+27,8,26,Skill_Fire,card.27.desc,FIRERING,3
+28,6,27,Skill_Fire,card.28.desc,FIRERING,4
+29,12,0,Skill_Explosion,card.29.desc,EXPLOSION,10
+30,10,29,Skill_Explosion,card.30.desc,EXPLOSION,25
+31,8,30,Skill_Explosion,card.31.desc,EXPLOSION,50
+32,12,0,Skill_FireBomb,card.32.desc,FIREBOMB,1
+33,10,32,Skill_FireBomb,card.33.desc,FIREBOMB,2
+34,8,33,Skill_FireBomb,card.34.desc,FIREBOMB,3
+35,6,34,Skill_FireBomb,card.35.desc,FIREBOMB,4
+36,12,0,Skill_EggUp,card.36.desc,EGGPROJECTILE,30
+37,10,36,Skill_EggUp,card.37.desc,EGGPROJECTILE,45
+38,8,37,Skill_EggUp,card.38.desc,EGGPROJECTILE,60

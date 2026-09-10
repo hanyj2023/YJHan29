@@ -39,6 +39,8 @@ public sealed class PlayerItemMagnet : MonoBehaviour
         }
 
         Instance = this;
+        baseAbsorptionRadius = StatusUpgradeTable.GetSavedValue(
+            PersistentStatusType.MagnetRadius);
         collectionCollider = GetComponent<Collider2D>();
     }
 

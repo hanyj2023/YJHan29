@@ -22,7 +22,8 @@ public sealed class LevelUpCardData
     public int Rate { get; }
     public int Required { get; }
     public string Icon { get; }
-    public string Description { get; }
+    public string DescriptionKey { get; }
+    public string Description => LocalizationManager.Get(DescriptionKey);
     public LevelUpCardEffect Effect { get; }
     public int Value { get; }
 
@@ -31,7 +32,7 @@ public sealed class LevelUpCardData
         int rate,
         int required,
         string icon,
-        string description,
+        string descriptionKey,
         LevelUpCardEffect effect,
         int value)
     {
@@ -39,7 +40,7 @@ public sealed class LevelUpCardData
         Rate = rate;
         Required = required;
         Icon = icon;
-        Description = description;
+        DescriptionKey = descriptionKey;
         Effect = effect;
         Value = value;
     }
@@ -49,7 +50,7 @@ public static class LevelUpCardTable
 {
     private static readonly string[] RequiredColumns =
     {
-        "ID", "Rate", "Required", "Icon", "Desc", "Effect", "Value"
+        "ID", "Rate", "Required", "Icon", "DescStringKey", "Effect", "Value"
     };
 
     public static string Decode(TextAsset csv)
@@ -106,7 +107,7 @@ public static class LevelUpCardTable
                 int required = ParseInt(values, columns, "Required");
                 int value = ParseInt(values, columns, "Value");
                 string icon = GetValue(values, columns, "Icon").Trim();
-                string description = GetValue(values, columns, "Desc").Trim();
+                string descriptionKey = GetValue(values, columns, "DescStringKey").Trim();
                 string effectName = GetValue(values, columns, "Effect").Trim();
 
                 if (id <= 0 || rate <= 0 || required < 0 || value < 0)
@@ -121,9 +122,9 @@ public static class LevelUpCardTable
                 }
 
                 if (string.IsNullOrWhiteSpace(icon)
-                    || string.IsNullOrWhiteSpace(description))
+                    || string.IsNullOrWhiteSpace(descriptionKey))
                 {
-                    throw new FormatException("Icon and Desc cannot be empty.");
+                    throw new FormatException("Icon and DescStringKey cannot be empty.");
                 }
 
                 if (!Enum.TryParse(effectName, true, out LevelUpCardEffect effect))
@@ -132,7 +133,7 @@ public static class LevelUpCardTable
                 }
 
                 cards.Add(new LevelUpCardData(
-                    id, rate, required, icon, description, effect, value));
+                    id, rate, required, icon, descriptionKey, effect, value));
             }
             catch (Exception exception) when (
                 exception is FormatException
